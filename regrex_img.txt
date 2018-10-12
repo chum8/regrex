@@ -1,3 +1,7 @@
+ You can run RegRex against a file.  From the command line, run 
+     py regrex.py <file>
+ where <file> is the file you would like to run a regex against
+\$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 \$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ $$$$ $$$$ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 \$$$          $$         $$$       $$$ $$   $$ $$          $    $$$$$$$$    $$$
 \$$$          $$         $$         $$$       $$$          $     $$$$$$     $$$
@@ -11,24 +15,13 @@
 \$$$    $$S    $         $$$       $$$   $$$    $          $    $$$$$$$$    $$$
 \$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Welcome to RegRex, the regular expression quick tool by chum8, (c) 2018-2019.
-Visit https://github.com/chum8/regrex for an up to date version
-
-You can run RegRex against a file.  From the command line, run 
-     py regrex.py <file>
-where <file> is the name of the file you would like to load into memory.
-
-/------------------------------------------------------------------\
-|    MAIN MENU                                                     |
-|==================================================================|
-| Please select a regular expression function to run against file  |
-|                                                                  |
-| 1   Input custom regular expression                              |
-| 2   Social security number finder                                |
-| 3   Email address finder                                         |
-| 4   Phone number finder                                          |
-| 5   Domain name finder                                           |
-| 6   Exit                                                         |
-|                                                                  |
-|                                                                  |
-\------------------------------------------------------------------/
+ Welcome to RegRex, the regular expression quick tool by chum8, (c) 2018-2019.
+ Visit https://github.com/chum8/regrex for an up to date version
+ Please select a regular expression function to run against file 
+                                                                  
+  1   Domain name finder                                           
+  2   Social security number finder                                
+  3   Email address finder                                         
+  4   Phone number finder                                          
+  5   Input custom regular expression                              
+  6   Exit                                                         
