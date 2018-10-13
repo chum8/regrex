@@ -1,25 +1,26 @@
-# [---IMPORT LIBRARIES---]
-import re, csv, sys
+# [----IMPORT LIBRARIES----]
+import re, csv, sys, datetime, getpass, socket
 
-# [---CAPTURE OPENING ARGUMENT---]
+# [----CAPTURE OPENING ARGUMENT----]
 if len(sys.argv) > 1:
     data_file = sys.argv[1]
 else:
     data_file = ''
 
-# [---CLASS DEFINITION---]
+# [----CLASS DEFINITION----]
 class re_builder():
 
     # initialize class
     def __init__(self, data_file):
         # public variables
+        self.log_file, self.img_file = 'regrex_log', 'regrex_img.txt'       
+        self.word_list_file = 'words_01.txt' # deprecated
         default_data_file = 'data.txt'
         if data_file == '' : data_file = default_data_file
         self.data_file = data_file   
-        self.word_list_file = 'words_01.txt' # deprecated
         self.results = ""                       
-        self.log_file = 'regrex_log'  
-        self.img_file = 'regrex_img.txt'       
+        self.result_total = 0
+        self.hidden_option_1 = 0
         self.select_exit = 1 
         self.select_cat = 2
         self.select_change = 3
@@ -29,13 +30,12 @@ class re_builder():
         self.presets_loaded = 0                 
 
         # private variables
-        self.__re = ""
-        self.__data = ""
+        self.__re, self.__data, self.__log_time  = "", "", ""
+        self.__words, self.__presets = [], []
         self.__application_name = 'RegRex'
         self.__default_error = '\nExiting ' + self.__application_name 
-        self.__words = []
-        self.__presets_file = 'regrex_defaults.csv'
-        self.__presets = []
+        self.__presets_file = 'regrex_presets.csv'
+        self.__an = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890'
 
     # change data file
     def change_file(self, data_file):
@@ -52,23 +52,27 @@ class re_builder():
             self.__data = open(self.data_file, 'r').read()
             # print(self.__data) # debug line
         except:
-            print("There was a problem loading the file",self.__default_error)
+            print('Fatal error! There was a problem loading the file into memory.',self.__default_error)
             exit()
 
     # cat the file in memory
     def show_data(self):
-        print(self.__data)
+        try:
+            print(self.__data)
+        except:
+            print('Unable to show data. Do you have a file loaded?')
 
-    # load word list from file
+    # load word list from file (deprecated)
     def load_word_list(self):
         try:
             self.__words = open(self.word_list_file, 'r').read().split()
             # print(self.words) # debug line
         except:
-            print("There was a problem loading the word list file",self.default_error)
+            print('There was a problem loading the word list file',self.default_error)
 
     # load regex presets from file
     def load_presets(self):
+        self.__presets = []
         try:
             with open(self.__presets_file) as f:
                 reader = csv.reader(f, delimiter=',', quotechar='"')
@@ -77,21 +81,27 @@ class re_builder():
                     temp = {'opt':n,'title':row[0],'re':row[1]}
                     self.__presets.append(temp)
                     n += 1
-                print(self.__presets) # debug line
+                # print(self.__presets) # debug line
             self.presets_loaded = len(self.__presets)
         except:
-            print("There was a problem loading the default presets file",self.__default_error)
+            print('There was a problem loading the default presets file',self.__default_error)
 
     # load a preset regular expression
     def load_re_preset(self, n):
-        n -= self.default_start
-        self.__re = self.__presets[n]['re']
-        # print(self.__re) # debug line
+        try:
+            n -= self.default_start
+            self.__re = self.__presets[n]['re']
+            # print(self.__re) # debug line
+        except:
+            print('Unable to load regular expression! Bad expression or expression missing.')
 
     # load a custom regular expression
     def load_re(self, my_re):
-        self.__re = my_re
-        print(self.__re) # debug line
+        try:
+            self.__re = my_re
+            # print(self.__re) # debug line
+        except:
+            print('Unable to load regular expression! Bad expression or expression missing.')
 
     # print main menu
     def make_menu(self):
@@ -125,27 +135,61 @@ class re_builder():
     # get results of regular expression
     def process_re(self, print_results = 'n', case_sensitive = 'n'):
         print('Preparing regular expression.')
-        if case_sensitive.lower() == 'y':
-            r = re.compile(self.__re)
-        else:
-            r = re.compile(self.__re, re.I)
+        try:
+            if case_sensitive.lower() == 'y':
+                r = re.compile(self.__re)
+            else:
+                r = re.compile(self.__re, re.I)
+        except:
+            print('Bad regular expression.  Unable to process.\n')
+            return 0
 
+        self.__log_time = str(datetime.datetime.now()) # note time
         self.results = r.findall(self.__data)
         # print(self.results) # debug line
 
-        # to print results in terminal
-        if print_results.lower() == 'y':
-            for item in my_re.results:
-                print(item)
-        result_total = len(my_re.results) 
-        print(result_total,'results returned.')
-        if result_total > 0:
-            wipe = str(input('Wipe results from file? (Yn) ENTER = no: '))
-        log = str(input('Log results? (Yn) ENTER = yes: '))
-        if log:
-            f = open(self.log_file, 'w')
-            f.write('Logged ' + str(result_total) + ' results.')
-            
+        if print_results.lower() == 'y': self.print_results()
+        if str(input('Log results? (Yn) ENTER = no: ')).lower() == 'y': self.log_results()
+        if self.result_total > 0:
+            if str(input('Mask alphanumeric characters and write to file? (Yn) ENTER = no: ')).lower() == 'y': self.mask_results()
+
+    # write results to log file
+    def log_results(self):
+        f = open(self.log_file, 'a')
+        f.write('[BEGIN RECORD]\n')
+        f.write(self.__log_time+'\n')
+        f.write('system user: '+str(getpass.getuser()+'\n'))
+        f.write('system host: '+str(socket.gethostname()+'\n'))
+        f.write('results: ' + str(self.result_total) + '\nfile: ' + str(self.data_file) + '\nregular expression: ' + self.__re + '\n[BEGIN RESULTS]\n')
+        for item in self.results:
+            f.write(item+'\n')
+        f.write('[RESULTS END]\n[RECORD END]\n')
+        print('Results logged to',self.log_file)
+        print('\n')
+ 
+    # replace alphanumeric data in original file with mask character
+    def mask_results(self):
+        print('Alphanumeric characters will be masked and the original file overwritten.  Type \'quit\' to cancel.')
+        mchar = str(input('Please enter a mask character: '))
+        if mchar.lower() == 'quit':
+            print('Original file unchanged due to user cancel.')
+        else:
+            # mask characters in results 
+            temp_results = []
+            mask = mchar[0] * len(self.__an) # prepare mask
+            for item in self.results:
+                temp = item.maketrans(self.__an, mask)
+                temp_results.append(item.translate(temp))
+            self.results = temp_results[:]
+            print(self.results)
+
+          # to print results in terminal
+    def print_results(self):
+        for item in self.results:
+            print(item)
+        self.result_total = len(self.results) 
+        print(self.result_total,'results returned.')
+           
     # print active regular expression
     def retrieve_re(self):
         return self.__re
@@ -174,6 +218,11 @@ while loop_maker:
     if n >= my_re.default_start and n <= my_re.default_start + my_re.presets_loaded:
         my_re.load_re_preset(n)
         my_re.process_re('y', 'y')
+        my_re.make_menu()
+    elif n == my_re.hidden_option_1:
+        # hidden option to reload regex_presets.csv
+        my_re.load_presets()
+        print('Hidden option chosen.  Reloaded presets.\n')
         my_re.make_menu()
     elif n == my_re.select_exit:
         loop_maker = ''
@@ -207,29 +256,8 @@ while loop_maker:
     else:
         exit()
 
-print('Maximum run-throughs reached, please launch RegRex again to keep regexxing!')
-
-#print('Welcome to The Forgotten Five Regex Lab.')
-#print('Regular expression now in memory is \'' + my_re.retrieve_re() + '\'')
-#if input('Run this regular expression against \'' + my_re.data_file + '\'? (Yn) ').lower() == 'y':
-#    my_re.process_re()
-#
-#    # to print results in terminal
-#    for item in my_re.results:
-#        print(item)
-#
-#    # to write to file
-#    with open(my_re.write_file, 'w') as f:
-#        for item in my_re.results:
-#            # to write stripping paranthese
-#            f.write(item.translate({ord(c): None for c in '()'}))
-#
-#            # to write as is
-#            # f.write(item)
-#
-#            # add new line
-## [----END OF PROGRAM----]
-#
+print('This program has a maximum loop value set. That value has been reached and the program is exiting. Please launch RegRex again to keep regexxing!')
+# [----END OF PROGRAM----]
 # [----DEPRECATED OPTIONS----]
 # move into program body if desired to re-implement
 # for regular expressions based on a preloaded regular expression
@@ -238,6 +266,3 @@ print('Maximum run-throughs reached, please launch RegRex again to keep regexxin
 # for regular expressions based on a word list
 # my_re.load_word_list()
 # my_re.build_word_search_re()
-
-
-           #f.write('\n')
