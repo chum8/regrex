@@ -17,11 +17,4 @@ where <file> is the file you would like to run RegRex against
  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Welcome to RegRex, the regular expression quick tool by chum8! 
 Copyright (c) 2018-2019, all rights reserved.
-Visit https://github.com/chum8/regrex for an up to date version
-                                                                  
-  1   Domain name finder                                           
-  2   Social security number finder                                
-  3   Email address finder                                         
-  4   Phone number finder                                          
-  5   Input custom regular expression                              
-  6   Exit                                                         
+Clone https://github.com/chum8/regrex for the most up to date version.

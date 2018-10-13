@@ -1,16 +1,24 @@
 # [---IMPORT LIBRARIES---]
-import re
+import re, csv, sys
+
+# [---CAPTURE OPENING ARGUMENT---]
+if len(sys.argv) > 1:
+    data_file = sys.argv[1]
+else:
+    data_file = ''
 
 # [---CLASS DEFINITION---]
 class re_builder():
 
     # initialize class
-    def __init__(self):
+    def __init__(self, data_file):
         # public variables
-        # self.data_file = 'data.txt'
-        self.data_file = 'universities.txt'     # default file to read data
+        default_data_file = 'data.txt'
+        if data_file == '' : data_file = default_data_file
+        self.data_file = data_file              # default file from which to read data
         self.word_list_file = 'words_01.txt'    # default file of words to turn into a regex
         self.results = ""                       # store the results
+        self.default_start = 3                  # default start position for presets loaded into menu
         self.records_loaded = 0                 # track the number of presets available
         self.write_file = 'regrex_results.txt'  # default file to write the results
         self.img_file = 'regrex_img.txt'       
@@ -21,7 +29,7 @@ class re_builder():
         self.__application_name = 'RegRex'
         self.__default_error = '\nExiting ' + self.__application_name 
         self.__words = []
-        self.__presets_file = 'regrex_defaults.txt'
+        self.__presets_file = 'regrex_defaults.csv'
         self.__presets = []
 
     # load data from file
@@ -43,17 +51,28 @@ class re_builder():
     # load regex presets from file
     def load_presets(self):
         try:
-            temp = open(self.__presets_file, 'r').read().split()
-            # print(temp) # debug line
-            for line in temp:
-                self.__presets.append(line)
+            with open(self.__presets_file) as f:
+                reader = csv.reader(f, delimiter=',', quotechar='"')
+                n = self.default_start
+                for row in reader:
+                    temp = {'opt':n,'title':row[0],'re':row[1]}
+                    self.__presets.append(temp)
+                    n += 1
+                print(self.__presets) # debug line
             self.records_loaded = len(self.__presets)
         except:
-            print("There was a problem loading the default presets file",self.default_error)
+            print("There was a problem loading the default presets file",self.__default_error)
 
     # load a prebuilt regular expression
     def load_re(self, my_re):
         self.__re = my_re
+
+    # print main menu
+    def make_menu(self, select_exit, select_custom):
+        print("  ",select_exit,"  Exit")
+        print("  ",select_custom,"  Custom Regular Expression")
+        for row in self.__presets:
+            print("  ",row['opt']," ",row['title'])
 
     # build regular expression
     def build_word_search_re(self, case_sensitive = 'y'):
@@ -90,7 +109,7 @@ class re_builder():
 
 # [----PROGRAM BODY----]
 # instantiate class
-my_re = re_builder()
+my_re = re_builder(data_file)
 
 # load data from file
 my_re.load_data()
@@ -99,18 +118,26 @@ my_re.load_data()
 my_re.load_presets()
 
 # default numbers
-select_custom = 5     # menu option to do a custom regex
-select_exit = 6       # menu option to exit
+select_exit = 1       # menu option to exit
+select_custom = 2     # menu option to do a custom regex
 
 # set how many times program can loop
 loop_maker = 'iloop'    # program will loop as many times as there are characters in this string
 
-# interactive terminal
+# begin interactive terminal with image
 print(open(my_re.img_file, 'r').read()) # bring up the welcome screen
+
+# show file in memory
+print('   File in memory =',my_re.data_file)
+
+# display menu
+my_re.make_menu(select_exit, select_custom)
+
+# get user input
 while loop_maker:
     try:
-        s = int(input('Please type an option from the menu above and strike ENTER: '))
-        if s >= 1 and s <= my_re.records_loaded:
+        s = int(input('\nPlease type an option from the menu above and strike ENTER: '))
+        if s >= my_re.default_start and s <= my_re.default_start + my_re.records_loaded:
             print('You selected option',s)
         elif s == select_custom:
             print("Custom selected")
