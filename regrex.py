@@ -22,9 +22,10 @@ class re_builder():
         self.img_file = 'regrex_img.txt'       
         self.select_exit = 1 
         self.select_cat = 2
-        self.select_custom_1 = 3
-        self.select_custom_2 = 4
-        self.default_start = 5
+        self.select_change = 3
+        self.select_custom_1 = 4
+        self.select_custom_2 = 5
+        self.default_start = 6
         self.presets_loaded = 0                 
 
         # private variables
@@ -36,6 +37,15 @@ class re_builder():
         self.__presets_file = 'regrex_defaults.csv'
         self.__presets = []
 
+    # change data file
+    def change_file(self, data_file):
+        if data_file == self.data_file:
+            print('The file you specified is already in memory!\n')
+        else:
+            self.data_file = data_file
+            self.load_data()
+            print('Successfully changed file in memory to',data_file,'\n')
+
     # load data from file
     def load_data(self):
         try:
@@ -43,6 +53,7 @@ class re_builder():
             # print(self.__data) # debug line
         except:
             print("There was a problem loading the file",self.__default_error)
+            exit()
 
     # cat the file in memory
     def show_data(self):
@@ -87,6 +98,7 @@ class re_builder():
         print('   File in memory =',self.data_file)
         print('  ',self.select_exit,'  Exit')
         print('  ',self.select_cat,'  Cat file in memory')
+        print('  ',self.select_change,'  Change file in memory')
         print('  ',self.select_custom_1,'  Custom Regular Expression')
         print('  ',self.select_custom_2,'  Custom Regular Expression (case sensitive)')
         for row in self.__presets:
@@ -169,6 +181,10 @@ while loop_maker:
         print('\n[BEGINNING OF FILE]')
         my_re.show_data()
         print('[END OF FILE]\n')
+        my_re.make_menu()
+    elif n == my_re.select_change:
+        data_file = str(input('Enter name of file to load: '))
+        my_re.change_file(data_file)
         my_re.make_menu()
     elif n == my_re.select_custom_1:
         temp = str(input('Enter regular expression: '))
