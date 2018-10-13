@@ -15,13 +15,17 @@ class re_builder():
         # public variables
         default_data_file = 'data.txt'
         if data_file == '' : data_file = default_data_file
-        self.data_file = data_file              # default file from which to read data
-        self.word_list_file = 'words_01.txt'    # default file of words to turn into a regex
-        self.results = ""                       # store the results
-        self.default_start = 3                  # default start position for presets loaded into menu
-        self.records_loaded = 0                 # track the number of presets available
-        self.write_file = 'regrex_results.txt'  # default file to write the results
+        self.data_file = data_file   
+        self.word_list_file = 'words_01.txt' # deprecated
+        self.results = ""                       
+        self.log_file = 'regrex_log'  
         self.img_file = 'regrex_img.txt'       
+        self.select_exit = 1 
+        self.select_cat = 2
+        self.select_custom_1 = 3
+        self.select_custom_2 = 4
+        self.default_start = 5
+        self.presets_loaded = 0                 
 
         # private variables
         self.__re = ""
@@ -39,6 +43,10 @@ class re_builder():
             # print(self.__data) # debug line
         except:
             print("There was a problem loading the file",self.__default_error)
+
+    # cat the file in memory
+    def show_data(self):
+        print(self.__data)
 
     # load word list from file
     def load_word_list(self):
@@ -59,20 +67,30 @@ class re_builder():
                     self.__presets.append(temp)
                     n += 1
                 print(self.__presets) # debug line
-            self.records_loaded = len(self.__presets)
+            self.presets_loaded = len(self.__presets)
         except:
             print("There was a problem loading the default presets file",self.__default_error)
 
-    # load a prebuilt regular expression
+    # load a preset regular expression
+    def load_re_preset(self, n):
+        n -= self.default_start
+        self.__re = self.__presets[n]['re']
+        # print(self.__re) # debug line
+
+    # load a custom regular expression
     def load_re(self, my_re):
         self.__re = my_re
+        print(self.__re) # debug line
 
     # print main menu
-    def make_menu(self, select_exit, select_custom):
-        print("  ",select_exit,"  Exit")
-        print("  ",select_custom,"  Custom Regular Expression")
+    def make_menu(self):
+        print('   File in memory =',self.data_file)
+        print('  ',self.select_exit,'  Exit')
+        print('  ',self.select_cat,'  Cat file in memory')
+        print('  ',self.select_custom_1,'  Custom Regular Expression')
+        print('  ',self.select_custom_2,'  Custom Regular Expression (case sensitive)')
         for row in self.__presets:
-            print("  ",row['opt']," ",row['title'])
+            print('  ',row['opt'],' ',row['title'])
 
     # build regular expression
     def build_word_search_re(self, case_sensitive = 'y'):
@@ -93,16 +111,29 @@ class re_builder():
             print("There was a problem building the regular expression",self.default_error)
 
     # get results of regular expression
-    def process_re(self, case_sens = 'n'):
-        if case_sens.lower() == 'y':
+    def process_re(self, print_results = 'n', case_sensitive = 'n'):
+        print('Preparing regular expression.')
+        if case_sensitive.lower() == 'y':
             r = re.compile(self.__re)
         else:
             r = re.compile(self.__re, re.I)
 
-        # print(type(r)) # debug line
         self.results = r.findall(self.__data)
         # print(self.results) # debug line
 
+        # to print results in terminal
+        if print_results.lower() == 'y':
+            for item in my_re.results:
+                print(item)
+        result_total = len(my_re.results) 
+        print(result_total,'results returned.')
+        if result_total > 0:
+            wipe = str(input('Wipe results from file? (Yn) ENTER = no: '))
+        log = str(input('Log results? (Yn) ENTER = yes: '))
+        if log:
+            f = open(self.log_file, 'w')
+            f.write('Logged ' + str(result_total) + ' results.')
+            
     # print active regular expression
     def retrieve_re(self):
         return self.__re
@@ -117,38 +148,44 @@ my_re.load_data()
 # load regex presets
 my_re.load_presets()
 
-# default numbers
-select_exit = 1       # menu option to exit
-select_custom = 2     # menu option to do a custom regex
-
 # set how many times program can loop
-loop_maker = 'iloop'    # program will loop as many times as there are characters in this string
+loop_maker = 'loop twenty times!!!'    # program will loop as many times as there are chars
 
-# begin interactive terminal with image
-print(open(my_re.img_file, 'r').read()) # bring up the welcome screen
-
-# show file in memory
-print('   File in memory =',my_re.data_file)
-
-# display menu
-my_re.make_menu(select_exit, select_custom)
+# launch interactive terminal with image and build display
+print(open(my_re.img_file, 'r').read())
+my_re.make_menu()
 
 # get user input
 while loop_maker:
-    try:
-        s = int(input('\nPlease type an option from the menu above and strike ENTER: '))
-        if s >= my_re.default_start and s <= my_re.default_start + my_re.records_loaded:
-            print('You selected option',s)
-        elif s == select_custom:
-            print("Custom selected")
-            #my_re.dosometing()
-        elif s == select_exit:
-            loop_maker = ''
-        else:
-            print('Not a menu selection!')
-    except:
-        print('Invalid selection!')
-    
+    #try:
+    n = int(input('\nPlease type an option from the menu above and strike ENTER: '))
+    if n >= my_re.default_start and n <= my_re.default_start + my_re.presets_loaded:
+        my_re.load_re_preset(n)
+        my_re.process_re('y', 'y')
+        my_re.make_menu()
+    elif n == my_re.select_exit:
+        loop_maker = ''
+    elif n == my_re.select_cat:
+        print('\n[BEGINNING OF FILE]')
+        my_re.show_data()
+        print('[END OF FILE]\n')
+        my_re.make_menu()
+    elif n == my_re.select_custom_1:
+        temp = str(input('Enter regular expression: '))
+        my_re.load_re(temp)
+        my_re.process_re('y', 'y')
+        my_re.make_menu()
+    elif n == my_re.select_custom_2:
+        temp = str(input('Enter regular expression: '))
+        my_re.load_re(temp)
+        my_re.process_re('y', 'y')
+        my_re.make_menu()
+    else:
+        print('Your selection is not in the menu.')
+#    except:
+       # print('Invalid key entered!')
+
+
     if loop_maker:
         loop_maker = loop_maker[1:]
     else:
