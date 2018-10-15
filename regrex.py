@@ -41,11 +41,11 @@ class re_builder():
     # change data file
     def change_file(self, data_file):
         if data_file == self.data_file:
-            print('The file you specified is already in memory!\n')
+            print('The file you specified is already in memory!')
         else:
             self.data_file = data_file
             self.load_data()
-            print('Successfully changed file in memory to',data_file,'\n')
+            print('Successfully changed file in memory to',data_file)
 
     # load data from file
     def load_data(self):
@@ -107,6 +107,7 @@ class re_builder():
 
     # print main menu
     def make_menu(self):
+        print('\n')
         print('   File in memory =',self.data_file)
         print('  ',self.select_exit,'   Exit')
         print('  ',self.select_cat,'   Cat file in memory')
@@ -143,7 +144,7 @@ class re_builder():
             else:
                 r = re.compile(self.__re, re.I)
         except:
-            print('Bad regular expression.  Unable to process.\n')
+            print('Bad regular expression.  Unable to process.')
             return 0
 
         self.__log_time = str(datetime.datetime.now()) # note time
@@ -168,7 +169,6 @@ class re_builder():
         f.write('[RESULTS END]\n[RECORD END]\n')
         print('Results successfully logged to',self.log_file)
         input('Hit ENTER to continue.')
-        print('\n')
  
     # replace alphanumeric data in original file with mask character
     def mask_results(self):
@@ -235,7 +235,7 @@ while loop_maker:
         elif n == my_re.hidden_option_1:
             # hidden option to reload regex_presets.csv
             my_re.load_presets()
-            print('Hidden option chosen. Reloaded presets.',my_re.presets_loaded,'presets found.\n')
+            print('Hidden option chosen. Reloaded presets.',my_re.presets_loaded,'presets found.')
             my_re.make_menu()
         elif n == my_re.select_exit:
             loop_maker = ''
