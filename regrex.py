@@ -108,11 +108,11 @@ class re_builder():
     # print main menu
     def make_menu(self):
         print('   File in memory =',self.data_file)
-        print('  ',self.select_exit,'  Exit')
-        print('  ',self.select_cat,'  Cat file in memory')
-        print('  ',self.select_change,'  Change file in memory')
-        print('  ',self.select_custom_1,'  Toggle case sensitivity')
-        print('  ',self.select_custom_2,'  Custom regular expression')
+        print('  ',self.select_exit,'   Exit')
+        print('  ',self.select_cat,'   Cat file in memory')
+        print('  ',self.select_change,'   Change file in memory')
+        print('  ',self.select_custom_1,'   Toggle case sensitivity')
+        print('  ',self.select_custom_2,'   Custom regular expression')
         for row in self.__presets:
             print('  ',row['opt'],' ',row['title'])
 
@@ -166,7 +166,8 @@ class re_builder():
         for item in self.results:
             f.write(item+'\n')
         f.write('[RESULTS END]\n[RECORD END]\n')
-        print('Results logged to',self.log_file)
+        print('Results successfully logged to',self.log_file)
+        input('Hit ENTER to continue.')
         print('\n')
  
     # replace alphanumeric data in original file with mask character

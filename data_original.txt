@@ -24,6 +24,14 @@ crandall@sbcglobal.net
 drezet@me.com
 miyop@icloud.com
 root
+http:/invalid.url.com/
+http://valid.url.com/
+https://www.hotmail.com
+https://www.microsoft.com
+ftp://hacker_get_file.com
+ttp://anotherinvalid.url.com
+https://chum8.github.com/regrex
+https://chum8.github.com/regrex/extras
 passwordispassword
 PasswordIsNotPassword
 incorrect

@@ -2496,3 +2496,19 @@ ycp.edu
 ysu.edu
 [RESULTS END]
 [RECORD END]
+[BEGIN RECORD]
+2018-10-15 10:41:10.908057
+system user: d.michael.s
+system host: 82dms
+results: 6
+file: data.txt
+regular expression: [fh][t]?tp[s]?://.{1,}[\./].{1,}
+[BEGIN RESULTS]
+http://valid.url.com/
+https://www.hotmail.com
+https://www.microsoft.com
+ftp://hacker_get_file.com
+https://chum8.github.com/regrex
+https://chum8.github.com/regrex/extras
+[RESULTS END]
+[RECORD END]
