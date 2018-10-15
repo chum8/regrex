@@ -1,3 +1,4 @@
-"Domain Name Finder","\w+\.[\w+\.]{0,}[\w+]"
-"Phone Number Finder",".?\d{3}.?.?\d{3}.?.?\d{4}"
-"Social Security Number Finder","\d{3}-\d{2}-\d{3}"
+"Domain name finder","\w+\.[\w+\.]{0,}[\w+]{2,63}"
+"Email address finder","[a-zA-Z0-9\.+%-_]{1,63}@[\w+]{1,63}\.[\w+]{2,63}"
+"Phone number finder",".?\d{3}.?.?\d{3}.?.?\d{4}"
+"SSN finder","\d{3}-\d{2}-\d{4}"

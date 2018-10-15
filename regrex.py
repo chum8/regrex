@@ -28,6 +28,7 @@ class re_builder():
         self.select_custom_2 = 5
         self.default_start = 6
         self.presets_loaded = 0                 
+        self.case_sensitive = 'n'
 
         # private variables
         self.__re, self.__data, self.__log_time  = "", "", ""
@@ -84,7 +85,8 @@ class re_builder():
                 # print(self.__presets) # debug line
             self.presets_loaded = len(self.__presets)
         except:
-            print('There was a problem loading the default presets file',self.__default_error)
+            print('There was a problem loading the default presets file. A common problem is an improperly formatted presets csv file.  Check',self.__presets_file,'for bad formatting, including extra whitespace at EOF.',self.__default_error)
+            exit()
 
     # load a preset regular expression
     def load_re_preset(self, n):
@@ -109,8 +111,8 @@ class re_builder():
         print('  ',self.select_exit,'  Exit')
         print('  ',self.select_cat,'  Cat file in memory')
         print('  ',self.select_change,'  Change file in memory')
-        print('  ',self.select_custom_1,'  Custom Regular Expression')
-        print('  ',self.select_custom_2,'  Custom Regular Expression (case sensitive)')
+        print('  ',self.select_custom_1,'  Toggle case sensitivity')
+        print('  ',self.select_custom_2,'  Custom regular expression')
         for row in self.__presets:
             print('  ',row['opt'],' ',row['title'])
 
@@ -133,10 +135,10 @@ class re_builder():
             print("There was a problem building the regular expression",self.default_error)
 
     # get results of regular expression
-    def process_re(self, print_results = 'n', case_sensitive = 'n'):
+    def process_re(self, print_results = 'n'):
         print('Preparing regular expression.')
         try:
-            if case_sensitive.lower() == 'y':
+            if self.case_sensitive.lower() == 'y':
                 r = re.compile(self.__re)
             else:
                 r = re.compile(self.__re, re.I)
@@ -179,11 +181,19 @@ class re_builder():
             mask = mchar[0] * len(self.__an) # prepare mask
             for item in self.results:
                 temp = item.maketrans(self.__an, mask)
-                temp_results.append(item.translate(temp))
+                temp = item.translate(temp)
+                temp_results.append(temp)
+                self.__data = self.__data.replace(item, temp)
             self.results = temp_results[:]
-            print(self.results)
+            # print(self.results) # debug line
+            # print(self.__data) # debug line
+            try:
+                f = open(self.data_file, 'w')
+                f.write(self.__data)
+            except:
+                print('Unable to write masked results to file. Original file unchanged.')
 
-          # to print results in terminal
+    # to print results in terminal
     def print_results(self):
         for item in self.results:
             print(item)
@@ -213,43 +223,45 @@ my_re.make_menu()
 
 # get user input
 while loop_maker:
-    #try:
-    n = int(input('\nPlease type an option from the menu above and strike ENTER: '))
-    if n >= my_re.default_start and n <= my_re.default_start + my_re.presets_loaded:
-        my_re.load_re_preset(n)
-        my_re.process_re('y', 'y')
-        my_re.make_menu()
-    elif n == my_re.hidden_option_1:
-        # hidden option to reload regex_presets.csv
-        my_re.load_presets()
-        print('Hidden option chosen.  Reloaded presets.\n')
-        my_re.make_menu()
-    elif n == my_re.select_exit:
-        loop_maker = ''
-    elif n == my_re.select_cat:
-        print('\n[BEGINNING OF FILE]')
-        my_re.show_data()
-        print('[END OF FILE]\n')
-        my_re.make_menu()
-    elif n == my_re.select_change:
-        data_file = str(input('Enter name of file to load: '))
-        my_re.change_file(data_file)
-        my_re.make_menu()
-    elif n == my_re.select_custom_1:
-        temp = str(input('Enter regular expression: '))
-        my_re.load_re(temp)
-        my_re.process_re('y', 'y')
-        my_re.make_menu()
-    elif n == my_re.select_custom_2:
-        temp = str(input('Enter regular expression: '))
-        my_re.load_re(temp)
-        my_re.process_re('y', 'y')
-        my_re.make_menu()
-    else:
-        print('Your selection is not in the menu.')
-#    except:
-       # print('Invalid key entered!')
-
+    try:
+        n = int(input('\nPlease type an option from the menu above and strike ENTER: '))
+        if n >= my_re.default_start and n <= my_re.default_start + my_re.presets_loaded:
+            my_re.load_re_preset(n)
+            my_re.process_re('y')
+            my_re.make_menu()
+        elif n == my_re.hidden_option_1:
+            # hidden option to reload regex_presets.csv
+            my_re.load_presets()
+            print('Hidden option chosen. Reloaded presets.',my_re.presets_loaded,'presets found.\n')
+            my_re.make_menu()
+        elif n == my_re.select_exit:
+            loop_maker = ''
+        elif n == my_re.select_cat:
+            print('\n[BEGINNING OF FILE]')
+            my_re.show_data()
+            print('[END OF FILE]\n')
+            my_re.make_menu()
+        elif n == my_re.select_change:
+            data_file = str(input('Enter name of file to load: '))
+            my_re.change_file(data_file)
+            my_re.make_menu()
+        elif n == my_re.select_custom_1:
+            if my_re.case_sensitive == 'y':
+                my_re.case_sensitive = 'n'
+                print('Case sensitive now OFF')
+            else:
+                my_re.case_sensitive = 'y'
+                print('Case sensitive now ON')
+            loop_maker += '.' # no need to waste a turn toggling case sensitivity
+        elif n == my_re.select_custom_2:
+            temp = str(input('Enter regular expression: '))
+            my_re.load_re(temp)
+            my_re.process_re('y')
+            my_re.make_menu()
+        else:
+            print('Your selection is not in the menu.')
+    except:
+        print('Please make a valid selection.')
 
     if loop_maker:
         loop_maker = loop_maker[1:]
