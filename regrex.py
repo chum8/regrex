@@ -190,6 +190,8 @@ class re_builder():
             try:
                 f = open(self.data_file, 'w')
                 f.write(self.__data)
+                print('File',self.data_file,'successfully overwritten with new masked data.')
+                input('Hit ENTER to continue.')
             except:
                 print('Unable to write masked results to file. Original file unchanged.')
 
