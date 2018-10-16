@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link type="text/css" media="all" href="https://www.learnupon.com/wp-content/cache/autoptimize/css/autoptimize_23b24d6cb1c91f4ced33e0a4074b1aa4.css" rel="stylesheet" /><title>Learning Management System | Online Training Software | LearnUpon</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+		
+		<link rel="alternate" type="application/rss+xml" title="LearnUpon" href="https://www.learnupon.com/feed/">
+
+						
+		
+		
+		
+<!-- This site is optimized with the Yoast SEO Premium plugin v8.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Learning management system. Create and deliver online courses to your employees, clients, and partners with an easy to use LMS. LearnUpon LMS is the world&#039;s leading cloud-based Learning Management System."/>
+<link rel="canonical" href="https://www.learnupon.com/" />
+<link rel="publisher" href="https://plus.google.com/+LearnUpon"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Learning Management System | Online Training Software | LearnUpon" />
+<meta property="og:description" content="Learning management system. Create and deliver online courses to your employees, clients, and partners with an easy to use LMS. LearnUpon LMS is the world&#039;s leading cloud-based Learning Management System." />
+<meta property="og:url" content="https://www.learnupon.com/" />
+<meta property="og:site_name" content="LearnUpon" />
+<meta property="og:image" content="https://www.learnupon.com/wp-content/uploads/OpenGraph_image.png" />
+<meta property="og:image:secure_url" content="https://www.learnupon.com/wp-content/uploads/OpenGraph_image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Learning management system. Create and deliver online courses to your employees, clients, and partners with an easy to use LMS. LearnUpon LMS is the world&#039;s leading cloud-based Learning Management System." />
+<meta name="twitter:title" content="Learning Management System | Online Training Software | LearnUpon" />
+<meta name="twitter:site" content="@learnupon" />
+<meta name="twitter:image" content="https://www.learnupon.com/wp-content/uploads/OpenGraph_image.png" />
+<meta name="twitter:creator" content="@learnupon" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.learnupon.com\/","name":"LearnUpon","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.learnupon.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.learnupon.com\/","sameAs":["https:\/\/www.facebook.com\/learnupon\/","https:\/\/www.instagram.com\/learnupon_lms\/","http:\/\/www.linkedin.com\/company\/learnupon","https:\/\/plus.google.com\/+LearnUpon","https:\/\/www.youtube.com\/user\/learnupon","https:\/\/twitter.com\/learnupon"],"@id":"https:\/\/www.learnupon.com\/#organization","name":"LearnUpon","logo":"https:\/\/www.learnupon.com\/wp-content\/uploads\/LearnUpon240px.png"}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//code.jquery.com' />
+<link rel='dns-prefetch' href='//js.maxmind.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='https://api.w.org/' href='https://www.learnupon.com/wp-json/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.learnupon.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.learnupon.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.learnupon.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.learnupon.com%2F&#038;format=xml" />
+
+      	</head>
+		<body class="home page-template-default page page-id-2 transparent-header">
+		<header class="header header--default">
+			<div class="section__content">
+				<a href="https://www.learnupon.com" class="header__logo"></a>
+
+				<a class="header__toggle js-toggle-nav-primary" href="#">
+					<span class="span-line first"></span>
+					<span class="span-line second"></span>
+					<span class="span-line third"></span>
+				</a>
+				<nav class="header__nav clear js-nav-primary">
+					<ul class="header-menu">
+						<li id="menu-item-21638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21638"><a href="https://www.learnupon.com/features/">Features</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://www.learnupon.com/pricing/">Pricing</a></li>
+<li id="menu-item-25368" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25368"><a href="https://www.learnupon.com/customers/">Customers</a></li>
+<li id="menu-item-22041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22041"><a href="https://www.learnupon.com/why-learnupon-lms/">Why LearnUpon?</a></li>
+<li id="menu-item-14115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14115"><a href="https://www.learnupon.com/schedule-live-demo/">Get My Free Trial &#038; Demo</a></li>
+					</ul>
+
+				</nav>
+			</div>
+		</header>
+
+		<div id='mask' class='close-modal'></div>
+		<div id='video' class='modal-window'>
+			<button class='close-modal close-modal-window'></button>
+			<div id='modal-contenten' class="modal-content-video"></div>
+		</div>
+		<main class="main">
+
+<div class="hero-homepage" >
+  <section class="section__content">
+    <div  class="columns columns--padding">
+      <div class="columns__column-41">
+        <div class="text-container">
+            <h1 class="hero-homepage__title">Online Learning. Simplified. </h1>
+            <h2 class="hero-homepage__subtitle">LearnUpon is a powerful Learning Management System that instantly simplifies online learning. </h2>
+                            <div class="dvHeroAction">
+                    <form action="https://www.learnupon.com/schedule-live-demo/" method="get">
+                        <button type="submit" class="btn btn--primary btn--shadow">Get My Free Trial &amp; Demo</button>
+                    </form>
+                </div>
+                    </div>
+      </div>
+      <div class="columns__column-58 hero-img-wraper">
+                  <img width="1400" height="682" src="https://www.learnupon.com/wp-content/uploads/LU_Product.jpg" alt="Learning Management System" />
+              </div>
+    </div>
+  </section>
+
+
+
+</div>
+<div class="brands">
+
+    <div class="brands__content">
+    <h4 class="brands__title">800+ customers train their employees, customers and partners worldwide with LearnUpon</h1>
+        <ul class="brand-list">
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/quickbooks@2x-300x164.png" alt="Intuit Quickbooks">
+                </li>
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/twilio@2x-1-300x164.png" alt="Twilio">
+                </li>
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/tripadvisor@2x-300x164.png" alt="tripadvisor">
+                </li>
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/Vauxhall@2x-2-300x164.png" alt="Vauxhall">
+                </li>
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/yokohama@2x-300x164.png" alt="YOKOHAMA">
+                </li>
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/ping@2x-1-300x164.png" alt="Ping">
+                </li>
+
+            
+                
+                <li class="brand-list__item">
+                    <img width="300" height="164" src="https://www.learnupon.com/wp-content/uploads/allstate@2x-300x164.png" alt="Allstate">
+                </li>
+
+            
+        </ul>
+
+    </div>
+</div>
+
+<div class="features-of-learnupon-learning-managment-system section clear cols-reg " style="background-color: #ffffff; ">
+    <div class="section__content">
+        <div class="columns columns--padding">
+            <div class="columns__column-25 col-1"><h4 style="text-align: center;"><a href="/features/"><img class="aligncenter wp-image-22175" src="https://www.learnupon.com/wp-content/uploads/quick_to_setup@2x.png" alt="" width="60" height="60" data-sizes="(max-width: 158px) 100vw, 158px" /></a></h4>
+<h4 class="titles-of-sections" style="text-align: center;"><a class="titles-of-sections" href="/features/">Quick to set up</a></h4>
+<p style="text-align: center;">Start realizing a return on investment sooner</p>
+</div><div class="columns__column-25 col-2"><h4 style="text-align: center;"><a href="/features/"><img class="aligncenter wp-image-22175" src="https://www.learnupon.com/wp-content/uploads/easy_to_use@2x.png" alt="" width="60" height="60" data-sizes="(max-width: 158px) 100vw, 158px" /></a></h4>
+<h4 class="titles-of-sections" style="text-align: center;"><a class="titles-of-sections" href="/features/">Easy to use</a></h4>
+<p style="text-align: center;">Reduce ongoing administration time</p>
+</div><div class="columns__column-25 col-3"><h4 style="text-align: center;"><a href="/features/"><img class="aligncenter wp-image-22175" src="https://www.learnupon.com/wp-content/uploads/powerful_features@2x.png" alt="" width="60" height="60" data-sizes="(max-width: 158px) 100vw, 158px" /></a></h4>
+<h4 class="titles-of-sections" style="text-align: center;"><a class="titles-of-sections" href="/features/">Powerful features</a></h4>
+<p style="text-align: center;">A complete solution for delivering your eLearning</p>
+</div><div class="columns__column-25 col-4"><h4 style="text-align: center;"><a href="/features/support/"><img class="aligncenter wp-image-22175" src="https://www.learnupon.com/wp-content/uploads/24_7_support@2x.png" alt="" width="60" height="60" data-sizes="(max-width: 158px) 100vw, 158px" /></a></h4>
+<h4 class="titles-of-sections" style="text-align: center;"><a class="titles-of-sections" href="/features/support/">Amazing 24/7 support</a></h4>
+<p style="text-align: center;">You have a committed global partner</p>
+</div>        </div>
+    </div>
+</div>
+
+<div class="why-learn-upon section clear cols-reg " style="">
+    <div class="section__content">
+        <div class="columns columns--padding">
+            <div class="columns__column-100 col-1"><p><img class="size-full style= aligncenter" src="https://www.learnupon.com/wp-content/uploads/learnupon_symbol@2x.png" alt="" width="40" height="40" /></p>
+<h2 class="why-learn-upon__title" style="text-align: center;">Deliver your courses and track results quickly and easily at scale</h2>
+<p class="why-learn-upon__subtitle" style="text-align: center;">Quickly upload or develop your content on our platform, add exams, pass marks, surveys and issue credits or certificates.</p>
+<p style="text-align: center;"><a class="btn btn--shadow btn--primary"   href="https://www.learnupon.com/why-learnupon-lms/">LEARN MORE</a></p>
+</div>        </div>
+    </div>
+</div>
+
+<div class="customers-section section clear cols-reg " style="">
+    <div class="section__content">
+        <div class="columns columns--padding">
+            <div class="columns__column-25 col-1"><p><a class="customer-wrap" href="/learning-management-system-for-enterprises/"><span class="customer-wrap__mask"> <img class="customer-wrap__img aligncenter wp-image-22216" src="https://www.learnupon.com/wp-content/uploads/enterprise-1-558x372.jpg" alt="learning management system" width="558" height="379" data-sizes="(max-width: 524px) 100vw, 524px" /> <span class="customer-wrap__title">Enterprise</span> <span class="customer-wrap__subtitle">VIEW MORE</span> </span></a></p>
+</div><div class="columns__column-25 col-2"><p><a class="customer-wrap" href="/learning-management-system-for-training-companies/"><span class="customer-wrap__mask"> <img class="customer-wrap__img aligncenter wp-image-22216" src="https://www.learnupon.com/wp-content/uploads/training-1-558x372.jpg" alt="learning management system" width="558" height="379" data-sizes="(max-width: 524px) 100vw, 524px" /> </span> <span class="customer-wrap__title">Training</span> <span class="customer-wrap__subtitle">VIEW MORE</span> </a></p>
+</div><div class="columns__column-25 col-3"><p><a class="customer-wrap" href="/learning-management-system-for-associations/"> <span class="customer-wrap__mask"> <img class="customer-wrap__img aligncenter wp-image-22216" src="https://www.learnupon.com/wp-content/uploads/associations-2-558x372.jpg" alt="learning management system" width="558" height="379" data-sizes="(max-width: 524px) 100vw, 524px" /> </span> <span class="customer-wrap__title">Associations</span> <span class="customer-wrap__subtitle">VIEW MORE</span> </a></p>
+</div><div class="columns__column-25 col-4"><p><a class="customer-wrap" href="/learning-management-system-for-software-companies/"> <span class="customer-wrap__mask"> <img class="customer-wrap__img aligncenter wp-image-22216" src="https://www.learnupon.com/wp-content/uploads/software-558x372.jpg" alt="learning management system" width="558" height="379" data-sizes="(max-width: 524px) 100vw, 524px" /> </span> <span class="customer-wrap__title">Software</span> <span class="customer-wrap__subtitle">VIEW MORE</span> </a></p>
+</div>        </div>
+    </div>
+</div>
+
+<div class="hero" style="background-image: url();">
+    <div class="hero__content">
+        <div class="hero__text">
+            <h2 class="summary-title" style="text-align: center;">You&#8217;re in good hands</h2>
+        </div>
+
+                    <div class="hero__columns columns">
+                                    <div class="columns__column-25">
+                        <div class="card summary--card">
+<header class="card__header">
+<h1 class="card__title">24/7</h1>
+</header>
+<div class="card__body">
+<h2 class="card__subtitle">Global customer support</h2>
+<p>We set the standard when it comes to exceptional customer support for a Learning Management System. We are here for our customers 24/7, ready to help you in any way we can.</p>
+</div>
+</div>
+                    </div>
+                                    <div class="columns__column-25">
+                        <div class="card summary--card">
+<header class="card__header">
+<h1 class="card__title">3,000,000+</h1>
+</header>
+<div class="card__body">
+<h2 class="card__subtitle">Number of active users</h2>
+<p>We support millions of active users, who log in to the LMS every day, week and month to take and complete courses.</p>
+</div>
+</div>
+                    </div>
+                                    <div class="columns__column-25">
+                        <div class="card summary--card">
+<header class="card__header">
+<h1 class="card__title">10/10</h1>
+</header>
+<div class="card__body">
+<h2 class="card__subtitle">Top rated LMS</h2>
+<p>An easy to use platform coupled with unrivalled 24/7 customer support has resulted in LearnUpon becoming the fastest growing LMS vendor in the world today.</p>
+</div>
+</div>
+                    </div>
+                                    <div class="columns__column-25">
+                        <div class="card summary--card">
+<header class="card__header">
+<h1 class="card__title">99.99%</h1>
+</header>
+<div class="card__body">
+<h2 class="card__subtitle">Recent uptime</h2>
+<p>With industry-leading uptime of over 99.99%, LearnUpon is a reliable, dependable learning management system.</p>
+</div>
+</div>
+                    </div>
+                            </div>
+            </div>
+</div>
+
+
+<div class="testimonials section clear" style="background-color: #ffffff">
+    <div class="section__content">
+        <div class="columns columns--padding">
+            <div class="columns__column-70 centered">
+                <div class="testimonials__content slick">
+
+                    
+                                                <div class="hidden testimonials-list__item">
+                                                            <img width="74" height="74" src="https://www.learnupon.com/wp-content/uploads/james-74x74-1.jpg" alt="LearnUpon LMS have exceeded our expectations in every single area. As a result, the system is working perfectly for us, and most importantly, our clients are happy" />
+                                                        <div class="testimonials-list__title">LearnUpon LMS have exceeded our expectations in every single area. As a result, the system is working perfectly for us, and most importantly, our clients are happy</div>
+                            <div class="testimonials-list__quote">James Sellers @ Marshall ACM</div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="get-a-free-trial section clear dark-bg cols-reg " style="background-color: #097bb8; ">
+    <div class="section__content">
+        <div class="columns columns--padding">
+            <div class="columns__column-100 col-1"><h1 style="text-align: center;">See for yourself why 800 businesses worldwide have chosen LearnUpon Learning Managment System</h1>
+<p style="text-align: center;"><div class="spacer"></div></p>
+<p style="text-align: center;"><a class="btn btn--shadow btn--primary"   href="/schedule-live-demo">Get My Free Trial &amp; Demo</a></p>
+<p style="text-align: center;"><img class="wp-image-22266 size-full aligncenter" src="https://www.learnupon.com/wp-content/uploads/lu-globe.png" alt="" width="444" height="200" /></p>
+</div>        </div>
+    </div>
+</div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-columns">
+                <div class="footer-columns__column">
+                    			<div class="textwidget"><img width="175" height="44" src="https://www.learnupon.com/wp-content/uploads/footer-logo2x.png" alt="">
+<img width="144" height="130" src="https://www.learnupon.com/wp-content/uploads/footer-logos.png" alt=""></div>
+		                </div>
+                <div class="footer-columns__column">
+                    <h4>Product</h4><div class="menu-footer-column-2-container"><ul id="menu-footer-column-2" class="menu"><li id="menu-item-29240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-29240"><a href="https://www.learnupon.com/">Home</a></li>
+<li id="menu-item-24005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24005"><a href="https://www.learnupon.com/features/">Features</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://www.learnupon.com/pricing/">Pricing</a></li>
+<li id="menu-item-24006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24006"><a href="https://www.learnupon.com/elearning-resources/">Resources</a></li>
+<li id="menu-item-27374" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-27374"><a href="https://www.learnupon.com/blog/what-is-an-lms/">What is an LMS?</a></li>
+<li id="menu-item-27680" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-27680"><a href="https://www.learnupon.com/blog/what-is-scorm/">What is SCORM?</a></li>
+<li id="menu-item-28156" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-28156"><a href="https://www.learnupon.com/blog/benefits-cloud-based-lms/">Benefits of a Cloud LMS</a></li>
+</ul></div>                </div>
+                <div class="footer-columns__column">
+                    <h4>Company</h4><div class="menu-footer-column-3-container"><ul id="menu-footer-column-3" class="menu"><li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://www.learnupon.com/about/">About</a></li>
+<li id="menu-item-11762" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11762"><a href="https://www.learnupon.com/blog/category/awards/">Awards</a></li>
+<li id="menu-item-6099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6099"><a href="https://www.learnupon.com/careers/">Careers</a></li>
+<li id="menu-item-28157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28157"><a href="https://www.learnupon.com/customers/">Customers</a></li>
+<li id="menu-item-28155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28155"><a href="https://www.learnupon.com/why-learnupon-lms/">Why LearnUpon?</a></li>
+<li id="menu-item-263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-263"><a href="https://www.learnupon.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-264"><a href="https://www.learnupon.com/terms-of-service/">Terms of Service</a></li>
+</ul></div>                </div>
+                <div class="footer-columns__column">
+                    <h4>Connect</h4><div class="menu-footer-column-4-container"><ul id="menu-footer-column-4" class="menu"><li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="https://www.learnupon.com/blog/">Blog</a></li>
+<li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="https://twitter.com/learnupon">Twitter</a></li>
+<li id="menu-item-33" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33"><a href="https://www.linkedin.com/company/learnupon">LinkedIn</a></li>
+<li id="menu-item-27682" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27682"><a href="https://www.instagram.com/learnupon_lms/">Instagram</a></li>
+<li id="menu-item-28158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28158"><a href="https://www.learnupon.com/contact/">Contact</a></li>
+</ul></div>			<div class="textwidget"><p><span class="spEmailJSCloak">hello -at- learnupon -dot- com</span><br />
+<a class="lupPhone" data-us="+1 888 908 3960" data-ie="+353 1 531 0121" data-gb="+44 203 642 7679" data-au="+61 2 8311 1209" href="callto://+18889083960">+1 888 908 3960</a></p>
+</div>
+		                </div>
+            </div>
+
+            <div class="content-info text-center">
+                			<div class="textwidget"><p>&copy; 2018 LearnUpon. All rights reserved.</p>
+</div>
+		            </div>
+
+        </footer>
+
+        
+
+            
+    
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
+
+
+
+
+<script type='text/javascript' src='https://js.maxmind.com/js/apis/geoip2/v2.1/geoip2.js?ver=4.9.8'></script>
+
+
+
+
+                    <!-- Google Code for Remarketing Tag -->
+            
+                <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+        <noscript>
+            <div style="display:inline;">
+                   <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1006007985/?value=0&amp;guid=ON&amp;script=0"/>
+            </div>
+        </noscript>
+
+		
+		
+    <script type="text/javascript" defer src="https://www.learnupon.com/wp-content/cache/autoptimize/js/autoptimize_c56e1b305599db724e42533eb299dba4.js"></script></body>
+</html>

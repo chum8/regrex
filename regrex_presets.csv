@@ -1,4 +1,5 @@
 " Domain name finder","\w+\.[\w+\.]{0,}[\w+]{2,63}"
+" URL finder","[fh][t]?tp[s]?://[a-zA-Z0-9\.+%-_]{1,}/?[a-zA-Z0-9\.+%-_/]{1,}"
 " URL finder","[fh][t]?tp[s]?://.{1,}[\./].{1,}"
 " Email address finder","[a-zA-Z0-9\.+%-_]{1,63}@[\w+]{1,63}\.[\w+]{2,63}"
 " Phone number finder",".?\d{3}.?.?\d{3}.?.?\d{4}"
