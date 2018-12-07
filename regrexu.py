@@ -1,5 +1,5 @@
 # [----IMPORT LIBRARIES----]
-import requests, sys
+import requests, sys, os
 from subprocess import call
 
 # [----CHECK FOR OPENING ARGS----]
@@ -79,6 +79,12 @@ else:
         print("[RECORD END]")
 
 # pass contents into regrex.py for further processing
-call('py regrex.py ' + my_file)
+try:
+    call(os.getcwd() + '/py regrex.py ' + os.getcwd() + '/' + my_file)
+except:
+    print("\nRegRexU successfully scraped", my_url + ".")
+    print("The system threw an error while attempting to pass the file into regrex.py.")
+    print("Please issue the following command to work with the results of the URL scrape:")
+    print("\n\tpy regrex.py "+my_file)
 # [----END OF PROGRAM----]
 
