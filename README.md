@@ -10,17 +10,6 @@ RegRex loads a file into memory.  From the interactive menu, run various regular
   universities.txt
 ```
 You may use any text file with RegRex.
-
-## Using the RegRexU URL helper
-  RegRexU scrapes a website and passes the contents into RegRex.
-  To run RegRexU with a prompt for the website
-  ```bash
-    py regrexu.py
-  ```
-  To run RegRexU in Fast Track mode, pass the name of the website
-  ```bash
-    py regrexu.py <http://somewebsite.com>
-  ```
     
 ## Installing
 ```bash
@@ -59,4 +48,15 @@ To run RegRex with a different file
   becomes
   ```bash
     XXX-XX-XXXX
+  ```
+
+## Using the RegRexU URL helper
+  RegRexU scrapes a website and passes the contents into RegRex.
+  To run RegRexU with a prompt for the website
+  ```bash
+    py regrexu.py
+  ```
+  To run RegRexU in Fast Track mode, pass the name of the website
+  ```bash
+    py regrexu.py <http://somewebsite.com>
   ```
