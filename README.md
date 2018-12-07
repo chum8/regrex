@@ -1,34 +1,42 @@
 # RegRex
 Regular expression tool for command line
 
-WHAT REGREX DOES
+## WHAT REGREX DOES
 RegRex loads a file into memory.  From the interactive menu, run various regular expressions against the data in the file.
 
-RegRex includes two files for you to use:
+## RegRex includes two files for you to use:
+```bash
   data.txt
   universities.txt
-  
+```
 You may use any text file with RegRex.
 
-USING THE REGREXU HELPER PROGRAM
+## Using the RegRexU URL helper
   RegRexU scrapes a website and passes the contents into RegRex.
   To run RegRexU with a prompt for the website
+  ```bash
     py regrexu.py
+  ```
   To run RegRexU in Fast Track mode, pass the name of the website
+  ```bash
     py regrexu.py <http://somewebsite.com>
+  ```
     
-INSTALLING
+## Installing
+```bash
 git clone https://github.com/chum8/regrex.git
-
-RUNNING
+```
+## Running
 Note: you can change the file in memory from the interactive terminal.
 To run RegRex with the default file (currently set to data.txt)
+```bash
   py regrex.py
- 
+```
 To run RegRex with a different file
+```bash
   py.regrex.py <file>
-
-AVAILABLE COMMANDS
+```
+## Available Commands
    1    Exit
    2    Cat file in memory
    3    Change file in memory
@@ -40,7 +48,7 @@ AVAILABLE COMMANDS
    9    Phone number finder
    10   SSN finder
 
-LOGGING AND MASKING
+## Logging and Masking
   After hunting for regular expressions, the program gives you the option of
     Logging the results to a file
     Saving the results with a mask character to replace the original data
