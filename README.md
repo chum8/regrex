@@ -37,6 +37,7 @@ To run RegRex with a different file
   py.regrex.py <file>
 ```
 ## Available commands
+```bash
    1    Exit
    2    Cat file in memory
    3    Change file in memory
@@ -47,9 +48,15 @@ To run RegRex with a different file
    8    Email address finder
    9    Phone number finder
    10   SSN finder
-
+```
 ## Logging and masking
-  After hunting for regular expressions, the program gives you the option of
-    Logging the results to a file
-    Saving the results with a mask character to replace the original data
-      i.e. a social security number 999-99-5555 could be masked as XXX-XX-XXXX
+  After the regular expression hunt completes, you will be asked if you would like to log the results.
+  You will also be asked if you would like to overwrite the results in the target file with a mask character.
+  With this behavior, you can mask things such as social security numbers and phone numbers.
+  ```bash
+    555-99-9999
+  ```
+  becomes
+  ```bash
+    XXX-XX-XXXX
+  ```
