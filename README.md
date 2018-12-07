@@ -1,7 +1,7 @@
 # RegRex
 Regular expression tool for command line
 
-## WHAT REGREX DOES
+## What RegRex does
 RegRex loads a file into memory.  From the interactive menu, run various regular expressions against the data in the file.
 
 ## RegRex includes two files for you to use:
@@ -36,7 +36,7 @@ To run RegRex with a different file
 ```bash
   py.regrex.py <file>
 ```
-## Available Commands
+## Available commands
    1    Exit
    2    Cat file in memory
    3    Change file in memory
@@ -48,7 +48,7 @@ To run RegRex with a different file
    9    Phone number finder
    10   SSN finder
 
-## Logging and Masking
+## Logging and masking
   After hunting for regular expressions, the program gives you the option of
     Logging the results to a file
     Saving the results with a mask character to replace the original data
